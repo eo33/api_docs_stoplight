@@ -1,3 +1,7 @@
+---
+stoplight-id: egggj5xjmas83
+---
+
 # Authentication
 
 The Furniture Bros API uses an _API key_, sometimes referred to as an _API Token_, for authentication. The API key allows you to access protected endpoints and interact with the endpoints securely. Below is a guide on how to authenticate your requests.

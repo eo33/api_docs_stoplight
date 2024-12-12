@@ -1,10 +1,8 @@
 ---
-date:
-  created: 2023-12-31
-  updated: 2024-01-02
-authors:
-  - team
+date: {created: '2023-12-31', updated: '2024-01-02'}
+authors: [team]
 description: This page introduces The Furniutre Bros API.
+stoplight-id: a0b0723df6a8f
 ---
 
 # Introduction

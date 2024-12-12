@@ -1,3 +1,7 @@
+---
+stoplight-id: m3ae86fx7xud2
+---
+
 # Making a request
 
 This guide explains the basics of making REST API requests to The Furniture Bros API. It covers essential elements such as HTTP methods, paths, headers, authentication, parameters, pagination, and error handling.

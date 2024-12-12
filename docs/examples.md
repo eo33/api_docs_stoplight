@@ -1,3 +1,7 @@
+---
+stoplight-id: blhac05p7paby
+---
+
 # Examples
 
 This section provides an example of an API request in different programming languages to help you quickly integrate The Furniture Bros API into your application. In the API docs section, each endpoint includes code snippets in various languages for easy copy-pasting. For this example, we will be using this endpoint:

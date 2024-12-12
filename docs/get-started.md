@@ -1,3 +1,7 @@
+---
+stoplight-id: 4d1ebdbf82950
+---
+
 # Get Started
 
 API (Application Programming Interface) allows applications to communicate with each other. Postman is a powerful tool for interacting with APIs, making it easy to test The Furniture Bros API. This guide will walk you through the basics of using Postman to get started with APIs.&#x20;
