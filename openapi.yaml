@@ -378,6 +378,7 @@ paths:
           description: See message description.
         '500':
           description: see message description.
+    parameters: []
   /address/list:
     get:
       summary: Get Addresses
