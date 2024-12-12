@@ -1,3 +1,7 @@
+---
+stoplight-id: f9b2d47c64e9b
+---
+
 # Functionalities
 
 The Furniture Bros API provides a range of functionalities, grouped into endpoint categories for ease of navigation. Whether you're managing inventory, analyzing customer behavior, or optimizing the checkout flow, our API offers the tools to solve these challenges efficiently.
