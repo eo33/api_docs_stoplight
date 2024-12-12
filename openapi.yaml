@@ -1,14 +1,12 @@
 openapi: 3.0.0
 info:
-  description: >-
-    This file contains the OpenAPI specifications for the Acocunt APIs of **The
-    Furniture Bros**.
+  description: This file contains the OpenAPI specifications for **The Furniture Bros**.
   title: The Furniture Bros Account OpenAPI Specifications
   version: 1.0.0
 servers:
-  - url: https://thefurniturebros.com
+  - url: 'https://thefurniturebros.com'
     description: Production server
-  - url: https://localhost:5000
+  - url: 'https://localhost:5000'
     description: Local server
 tags:
   - name: Account
@@ -27,9 +25,7 @@ paths:
   /auth/register:
     post:
       summary: Register an Account
-      description: >-
-        This endpoint allows you to register a user. Once registered, it will
-        return an API key.
+      description: 'This endpoint allows you to register a user. Once registered, it will return an API key.'
       tags:
         - Account
       requestBody:
@@ -66,9 +62,9 @@ paths:
               example:
                 name: john doe
                 email: john_doe12@gmail.com
-                password: "123456"
+                password: '123456'
       responses:
-        "200":
+        '200':
           description: Successful response. Returns an object containing the API key.
           content:
             application/json:
@@ -77,21 +73,17 @@ paths:
                 properties:
                   token:
                     type: string
-                    description: >
-                      The API key used to authenticate and authorize the
-                      account.
+                    description: |
+                      The API key used to authenticate and authorize the account.
                 example:
-                  token: >-
-                    eyJhbGciOiJIUzI1NiIsInR5cBGlR1fkzXQKgxLshzVL2lcajQNXEUTH09N-csr98
-        "400":
+                  token: eyJhbGciOiJIUzI1NiIsInR5cBGlR1fkzXQKgxLshzVL2lcajQNXEUTH09N-csr98
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
       externalDocs:
-        description: >-
-          The API key uses JSON Web Token (JWT) to authenticate. Learn more
-          about it here.
-        url: https://auth0.com/docs/secure/tokens/json-web-tokens
+        description: The API key uses JSON Web Token (JWT) to authenticate. Learn more about it here.
+        url: 'https://auth0.com/docs/secure/tokens/json-web-tokens'
   /auth/login:
     post:
       summary: Get an API key
@@ -121,12 +113,10 @@ paths:
                     The password of the account.
               example:
                 email: john_doe12@gmail.com
-                password: "123456"
+                password: '123456'
       responses:
-        "200":
-          description: >-
-            Successful response. Returns an object containing the API key and
-            the information about the user.
+        '200':
+          description: Successful response. Returns an object containing the API key and the information about the user.
           content:
             application/json:
               schema:
@@ -134,16 +124,13 @@ paths:
                 properties:
                   token:
                     type: string
-                    description: >
-                      The API key used to authenticate and authorize the
-                      account. 
-
+                    description: |
+                      The API key used to authenticate and authorize the account. 
                       Use this API key to access the different endpoints.
                   user:
                     type: object
-                    description: >
-                      The parameters related to the user. This gives information
-                      about the user.
+                    description: |
+                      The parameters related to the user. This gives information about the user.
                     properties:
                       _id:
                         type: string
@@ -168,23 +155,20 @@ paths:
                           The administrtive privilege of the user.
                       __v:
                         type: integer
-                        description: >
-                          The version of the user. The version increases
-                          whenever the account is modified.
+                        description: |
+                          The version of the user. The version increases whenever the account is modified.
                 example:
-                  token: >-
-                    eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc0ODhjYWE4ZGQxZmYzZDNlYjk0NTQxIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE3MzI4MDc4ODEsImV4cCI6MTczMjg0Mzg4MX0.aFBDj34nuuNkt95G71QbL7KJTotLyNE0Lu9BKe4Zv0s
+                  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjc0ODhjYWE4ZGQxZmYzZDNlYjk0NTQxIiwiYWRtaW4iOnRydWV9LCJpYXQiOjE3MzI4MDc4ODEsImV4cCI6MTczMjg0Mzg4MX0.aFBDj34nuuNkt95G71QbL7KJTotLyNE0Lu9BKe4Zv0s
                   user:
                     _id: 67488caa8dd1ff3d3eb94541
                     name: test name
                     email: name_test_admin@gmail.com
-                    password: >-
-                      $2a$10$767ZSzTiC0Jm.8p/Jmyx1eqnciqWn7GCUDA/I7AbiTgmqHfJc/mfC
+                    password: $2a$10$767ZSzTiC0Jm.8p/Jmyx1eqnciqWn7GCUDA/I7AbiTgmqHfJc/mfC
                     admin: true
                     __v: 0
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /auth/validate:
     get:
@@ -195,10 +179,8 @@ paths:
       security:
         - APIKey: []
       responses:
-        "200":
-          description: >-
-            Successful response. Returns an object containing information
-            related to the user's access privilege.
+        '200':
+          description: Successful response. Returns an object containing information related to the user's access privilege.
           content:
             application/json:
               schema:
@@ -206,36 +188,27 @@ paths:
                 properties:
                   authenticate:
                     type: boolean
-                    description: >
-                      Indicates whether the user is authenticated.varios
-                      endpoints.
-
+                    description: |
+                      Indicates whether the user is authenticated.varios endpoints.
                       - `ture`: The user is authenticated.
-
                       - `false`: The user is not authenticated.
                   admin:
                     type: boolean
-                    description: >
-                      Specifies if the authenticated user has administrative
-                      privileges. If you have admin privileges, you can make
-                      requests to admin-only endpoints.
-
+                    description: |
+                      Specifies if the authenticated user has administrative privileges. If you have admin privileges, you can make requests to admin-only endpoints.
                       - `true`: The user has admin privileges.
-
                       - `false`: The user does not have admin previleges.
                 example:
                   authenticate: true
                   admin: false
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
-  /users/get_all/{page}:
+  '/users/get_all/{page}':
     get:
       summary: Get Users
-      description: >-
-        This endpoint allows you to get the info about the users in the
-        application.
+      description: This endpoint allows you to get the info about the users in the application.
       tags:
         - Account
       parameters:
@@ -245,17 +218,13 @@ paths:
           schema:
             type: integer
             minimum: 1
-          description: >-
-            The page number to retrieve (1-based index). Each page returns 20
-            users.
+          description: The page number to retrieve (1-based index). Each page returns 20 users.
       security:
         - APIKey:
             - admin
       responses:
-        "200":
-          description: >-
-            Successful response. Returns an object with users statistics in the
-            application.
+        '200':
+          description: Successful response. Returns an object with users statistics in the application.
           content:
             application/json:
               schema:
@@ -299,10 +268,8 @@ paths:
                             - `false`: The user does not have admin previleges.
                         __v:
                           type: integer
-                          description: >-
-                            The version of the user. The version increases
-                            whenever the account is modified.
-                    description: A list of users, including their details.
+                          description: The version of the user. The version increases whenever the account is modified.
+                    description: 'A list of users, including their details.'
                 example:
                   totalUsers: 51
                   adminUsers: 11
@@ -311,20 +278,17 @@ paths:
                     - _id: 6555a0f89feeac7dccd9b1dd
                       name: first account
                       email: first_account@gmail.com
-                      password: >-
-                        $2a$10$jK1bvjH7D/pdjI6mVb9uSuXMeWwcFwhlBYIh7Wqf0CLsey9I3Epx2
+                      password: $2a$10$jK1bvjH7D/pdjI6mVb9uSuXMeWwcFwhlBYIh7Wqf0CLsey9I3Epx2
                       admin: false
                       __v: 0
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /users/edit:
     post:
       summary: Edit User Details
-      description: >-
-        This endpoint allows you to edit a user's details. This requires admin
-        privileges.
+      description: This endpoint allows you to edit a user's details. This requires admin privileges.
       tags:
         - Account
       security:
@@ -341,11 +305,9 @@ paths:
               properties:
                 userId:
                   type: string
-                  description: >
+                  description: |
                     The user ID of the account to modify. 
-
-                    You can get the list of user ID by using the `POST
-                    /users/get_all/{page}` endpoint.
+                    You can get the list of user ID by using the `POST /users/get_all/{page}` endpoint.
                 newName:
                   type: string
                   description: |
@@ -367,7 +329,7 @@ paths:
                 newEmail: jane_example@gmail.com
                 newAdminStatus: true
       responses:
-        "200":
+        '200':
           description: Successful response. Returns an object containing user information.
           content:
             application/json:
@@ -376,9 +338,8 @@ paths:
                 properties:
                   user:
                     type: object
-                    description: >
-                      The parameters related to the user. This gives information
-                      about the user.
+                    description: |
+                      The parameters related to the user. This gives information about the user.
                     properties:
                       _id:
                         type: string
@@ -403,21 +364,19 @@ paths:
                           The administrtive privilege of the user.
                       __v:
                         type: integer
-                        description: >
-                          The version of the user. The version increases
-                          whenever the account is modified.
+                        description: |
+                          The version of the user. The version increases whenever the account is modified.
                 example:
                   user:
                     _id: 674605a2a18c2f38f2148601
                     name: Jane Doe
                     email: jane_example@gmail.com
-                    password: >-
-                      $2a$10$eaixU5.H3PFYW.9V6NM8A.A.CPnFHtbcWPWsp/I1NWsfxqIG6s87K
+                    password: $2a$10$eaixU5.H3PFYW.9V6NM8A.A.CPnFHtbcWPWsp/I1NWsfxqIG6s87K
                     admin: false
                     __v: 0
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /address/list:
     get:
@@ -429,7 +388,7 @@ paths:
       security:
         - APIKey: []
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the user's address information.
           content:
             application/json:
@@ -473,30 +432,27 @@ paths:
                     _id: 6555a0f89feeac7dccd9b1dd
                     name: first account
                   addresses:
-                    - address: 383 Kent St, Sydney NSW 2000, Australia
+                    - address: '383 Kent St, Sydney NSW 2000, Australia'
                       main: false
                       _id: 656bf54c99723847983a9714
-                    - address: 80 Collins St, Melbourne VIC 3000, Australia
+                    - address: '80 Collins St, Melbourne VIC 3000, Australia'
                       main: true
                       _id: 656d3c9b6f828da5305bad97
                   __v: 53
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /address/api_key:
     get:
       summary: Get Google Places Key
-      description: >-
-        This endpoint allows you to get the API key for Google Places API. Learn
-        more
-        [here](https://developers.google.com/maps/documentation/places/web-service).
+      description: 'This endpoint allows you to get the API key for Google Places API. Learn more [here](https://developers.google.com/maps/documentation/places/web-service).'
       tags:
         - Checkout
       security:
         - APIKey: []
       responses:
-        "200":
+        '200':
           description: Successful response. The order has been created successfully.
           content:
             text/plain:
@@ -504,9 +460,9 @@ paths:
                 type: string
                 description: The API key for Google Places.
                 example: AIzaSyC6ASDCKAAS3G1E2EjRKlzk8TvHziasds"
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /address/add:
     post:
@@ -527,22 +483,20 @@ paths:
               properties:
                 address:
                   type: string
-                  description: >-
-                    The address of the user to add. Newly added address will be
-                    selected as the main address.
+                  description: The address of the user to add. Newly added address will be selected as the main address.
             example:
-              address: 383 Kent St, Sydney NSW 2000, Australia
+              address: '383 Kent St, Sydney NSW 2000, Australia'
       responses:
-        "200":
+        '200':
           description: Successful response. The order has been created successfully.
           content:
             text/plain:
               schema:
                 type: string
                 example: success
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /address/select:
     put:
@@ -563,16 +517,13 @@ paths:
               properties:
                 addressId:
                   type: string
-                  description: >
-                    The address ID of the user to be selected as the main
-                    address. 
-
-                    Use the `GET get addresses` endpoint to look at the list of
-                    addresses, and it's ID.
+                  description: |
+                    The address ID of the user to be selected as the main address. 
+                    Use the `GET get addresses` endpoint to look at the list of addresses, and it's ID.
               example:
                 addressId: 656d3c9b6f828da5305bad97
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the user's address information.
           content:
             application/json:
@@ -607,16 +558,16 @@ paths:
                   _id: 6556dd7a50e4db57682be25c
                   user: 6555a0f89feeac7dccd9b1dd
                   addresses:
-                    - address: 383 Kent St, Sydney NSW 2000, Australia
+                    - address: '383 Kent St, Sydney NSW 2000, Australia'
                       main: false
                       _id: 656bf54c99723847983a9714
-                    - address: 80 Collins St, Melbourne VIC 3000, Australia
+                    - address: '80 Collins St, Melbourne VIC 3000, Australia'
                       main: true
                       _id: 656d3c9b6f828da5305bad97
                   __v: 53
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /address/delete:
     delete:
@@ -637,15 +588,13 @@ paths:
               properties:
                 addressId:
                   type: string
-                  description: >
+                  description: |
                     The address ID of the user to be deleted. 
-
-                    Use the `GET get addresses` endpoint to look at the list of
-                    addresses, and it's ID.
+                    Use the `GET get addresses` endpoint to look at the list of addresses, and it's ID.
             example:
               addressId: 674b3347dc3d9360b4c32da3
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the user's address information.
           content:
             application/json:
@@ -680,16 +629,16 @@ paths:
                   _id: 6556dd7a50e4db57682be25c
                   user: 6555a0f89feeac7dccd9b1dd
                   addresses:
-                    - address: 383 Kent St, Sydney NSW 2000, Australia
+                    - address: '383 Kent St, Sydney NSW 2000, Australia'
                       main: false
                       _id: 656bf54c99723847983a9714
-                    - address: 80 Collins St, Melbourne VIC 3000, Australia
+                    - address: '80 Collins St, Melbourne VIC 3000, Australia'
                       main: true
                       _id: 656d3c9b6f828da5305bad97
                   __v: 53
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /cart/add:
     post:
@@ -718,9 +667,8 @@ paths:
               properties:
                 productId:
                   type: string
-                  description: >
-                    The ID of the product. You can use the `GET Product list`
-                    endpoint to view available products and it's ID.
+                  description: |
+                    The ID of the product. You can use the `GET Product list` endpoint to view available products and it's ID.
                 quantity:
                   type: integer
                   description: |
@@ -729,7 +677,7 @@ paths:
                 productId: 6555a1f49feeac7dccd9b1ee
                 quantity: 20
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the result of the operation.
           content:
             text/plain:
@@ -737,9 +685,9 @@ paths:
                 type: string
                 description: Successful operation.
                 example: POST REQUEST SUCCESS
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /cart/items:
     get:
@@ -751,7 +699,7 @@ paths:
       security:
         - APIKey: []
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the list of items in your cart.
           content:
             application/json:
@@ -804,9 +752,7 @@ paths:
                               description: Number of units sold.
                             __v:
                               type: integer
-                              description: >-
-                                The version of the product. The version
-                                increases whenever the product is modified.
+                              description: The version of the product. The version increases whenever the product is modified.
                         quantity:
                           type: integer
                           description: Quantity of the product ordered.
@@ -815,9 +761,7 @@ paths:
                           description: Unique identifier for the item in the order.
                   __v:
                     type: integer
-                    description: >-
-                      The version of the cart. The version increases whenever
-                      the cart is modified.
+                    description: The version of the cart. The version increases whenever the cart is modified.
                 example:
                   _id: 6556aed27e6cd0b318dbb08d
                   user:
@@ -830,9 +774,7 @@ paths:
                         name: White desk
                         image: 1700110886749.webp
                         price: 60
-                        description: >-
-                          Maecenas at justo eu eros ultrices vulputate vitae at
-                          augue.
+                        description: Maecenas at justo eu eros ultrices vulputate vitae at augue.
                         soldCount: 99
                         __v: 0
                       quantity: 20
@@ -848,16 +790,14 @@ paths:
                       quantity: 25
                       _id: 67498e82990ee7506c8ee958
                   __v: 100
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /cart/edit:
     put:
       summary: Edit Cart Items
-      description: >-
-        This endpoint allows you to update the quantity of a product in the
-        cart.
+      description: This endpoint allows you to update the quantity of a product in the cart.
       tags:
         - Cart
       security:
@@ -882,7 +822,7 @@ paths:
                 productId: 655fefee60b5a0bcc0a9313c
                 quantity: 40
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the items in the cart.
           content:
             application/json:
@@ -912,9 +852,7 @@ paths:
                           description: Unique identifier for the item in the cart.
                   __v:
                     type: integer
-                    description: >-
-                      The version of the cart. The version increases whenever
-                      the cart is modified.
+                    description: The version of the cart. The version increases whenever the cart is modified.
                 example:
                   _id: 6556aed27e6cd0b318dbb08d
                   user: 6555a0f89feeac7dccd9b1dd
@@ -926,9 +864,9 @@ paths:
                       quantity: 40
                       _id: 67498e82990ee7506c8ee958
                   __v: 100
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /cart/delete:
     delete:
@@ -954,7 +892,7 @@ paths:
                 items:
                   - 67498e75990ee7506c8ee954
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the updated cart after deletion.
           content:
             application/json:
@@ -984,9 +922,7 @@ paths:
                           description: Unique identifier for the item in the cart.
                   __v:
                     type: integer
-                    description: >-
-                      The version of the cart. The version increases whenever
-                      the cart is modified.
+                    description: The version of the cart. The version increases whenever the cart is modified.
                 example:
                   _id: 6556aed27e6cd0b318dbb08d
                   user: 6555a0f89feeac7dccd9b1dd
@@ -998,25 +934,18 @@ paths:
                       quantity: 41
                       _id: 6749904c990ee7506c8ee97d
                   __v: 101
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /orders/get_all:
     get:
       summary: Get all Orders
-      description: >
-        This endpoint allows you to get the orders of the user. Order can either
-        be:
-
-        - `pending`: Order is in the `pending` state. It has not been
-        delivered. 
-
-        - `delivery`: Order is in the `delivery` state. It is still in shipment
-        and not completed.
-
+      description: |
+        This endpoint allows you to get the orders of the user. Order can either be:
+        - `pending`: Order is in the `pending` state. It has not been delivered. 
+        - `delivery`: Order is in the `delivery` state. It is still in shipment and not completed.
         - `completed`: Order is completed an finalized. 
-
 
         To change the status of an order, use the **POST Edit Orders** endpoint.
       tags:
@@ -1024,7 +953,7 @@ paths:
       security:
         - APIKey: []
       responses:
-        "200":
+        '200':
           description: Successful response. Returns all of the user's orders.
           content:
             application/json:
@@ -1053,10 +982,10 @@ paths:
                       description: Quantity of the product in the order.
                     shipping:
                       type: string
-                      description: Shipping type (e.g., "Regular").
+                      description: 'Shipping type (e.g., "Regular").'
                     status:
                       type: string
-                      description: Current status of the order (e.g., "pending").
+                      description: 'Current status of the order (e.g., "pending").'
                     createdAt:
                       type: string
                       description: Date the order was created.
@@ -1072,7 +1001,7 @@ paths:
                   quantity: 4
                   shipping: Regular
                   status: pending
-                  createdAt: November 30, 2024
+                  createdAt: 'November 30, 2024'
                   orderNum: 1
                 - orderId: 674b37b8dc3d9360b4c32e72
                   productId: 655ff05e60b5a0bcc0a9314e
@@ -1082,21 +1011,18 @@ paths:
                   quantity: 4
                   shipping: Regular
                   status: pending
-                  createdAt: November 30, 2024
+                  createdAt: 'November 30, 2024'
                   orderNum: 1
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /orders/add:
     post:
       summary: Add an Order
-      description: >
-        This endpoint allows users to create a new order by providing the list
-        of items they want to purchase along with the shipping address. 
-
+      description: |
+        This endpoint allows users to create a new order by providing the list of items they want to purchase along with the shipping address. 
         - Each item must include the product ID, quantity, and shipping type.
-
         - The address field specifies the delivery address for the order.
       tags:
         - Orders
@@ -1123,7 +1049,7 @@ paths:
                         description: Number of units of the product.
                       shipping:
                         type: string
-                        description: Type of shipping for the product (e.g., "Regular").
+                        description: 'Type of shipping for the product (e.g., "Regular").'
                     required:
                       - product
                       - quantity
@@ -1142,25 +1068,24 @@ paths:
                   - product: 656427ab575db1ee43d46b57
                     quantity: 10
                     shipping: Regular
-                address: Post Office Pl, Carlton VIC 3053, Australia
+                address: 'Post Office Pl, Carlton VIC 3053, Australia'
       responses:
-        "200":
+        '200':
           description: Successful response. The order has been created successfully.
           content:
             text/plain:
               schema:
                 type: string
                 example: ORDER SUCCESS
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /orders/change-status:
     post:
       summary: Edit Orders
-      description: >
-        This endpoint allows users to update the status of one or more orders.
-        Valid status values include:
+      description: |
+        This endpoint allows users to update the status of one or more orders. Valid status values include:
           - `pending`: The order has not been delivered.
           - `delivery`: The order is in shipment.
           - `completed`: The order is finalized and delivered.
@@ -1206,7 +1131,7 @@ paths:
                   - orderId: 674b46a8dc3d9360b4c32ede
                     status: completed
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the updated orders with their details.
           content:
             application/json:
@@ -1235,7 +1160,7 @@ paths:
                             description: Number of units of the product.
                           shipping:
                             type: string
-                            description: Shipping type (e.g., "Regular").
+                            description: 'Shipping type (e.g., "Regular").'
                           _id:
                             type: string
                             description: Unique identifier for the item in the order.
@@ -1265,20 +1190,17 @@ paths:
                       shipping: Regular
                       _id: 674b46a8dc3d9360b4c32ee0
                   status: completed
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /orders/delete:
     post:
       summary: Delete Orders
-      description: >
+      description: |
         This endpoint allows users to delete one or more orders. 
-
         - Users must provide the `orderId` of each order to be deleted.
-
-        - The response confirms whether the operation was successful and the
-        number of orders deleted.
+        - The response confirms whether the operation was successful and the number of orders deleted.
       tags:
         - Orders
       security:
@@ -1303,7 +1225,7 @@ paths:
                   - 674b46f1dc3d9360b4c32ee2
                   - 674b46a8dc3d9360b4c32ede
       responses:
-        "200":
+        '200':
           description: Successful response. Confirms the number of deleted orders.
           content:
             application/json:
@@ -1319,20 +1241,18 @@ paths:
                 example:
                   acknowledged: true
                   deletedCount: 2
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /products:
     get:
       summary: Get Product list
-      description: >-
-        This endpoint allows you get the list of available products. It shows
-        all available product.
+      description: This endpoint allows you get the list of available products. It shows all available product.
       tags:
         - Product
       responses:
-        "200":
+        '200':
           description: Successful response. Returns a list of product.
           content:
             application/json:
@@ -1362,9 +1282,7 @@ paths:
                       description: The total number of units sold.
                     __v:
                       type: integer
-                      description: >-
-                        The version of the product. The version increases
-                        whenever the product is modified.
+                      description: The version of the product. The version increases whenever the product is modified.
                   example:
                     _id: 6555a1f49feeac7dccd9b1ee
                     name: brown tablede
@@ -1373,16 +1291,14 @@ paths:
                     description: this is a brown table
                     soldCount: 90
                     __v: 0
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
-  /products/{filename}:
+  '/products/{filename}':
     get:
       summary: Get a Product Image
-      description: >-
-        This endpoint allows you get the image of the product. The image is in
-        the .webp format.
+      description: This endpoint allows you get the image of the product. The image is in the .webp format.
       tags:
         - Product
       parameters:
@@ -1392,20 +1308,18 @@ paths:
           example: 1700110836527.webp
           schema:
             type: string
-          description: >-
-            The product image filename to use. Use the `GET Product list`
-            endpoint to view all products and their image filenames.
+          description: The product image filename to use. Use the `GET Product list` endpoint to view all products and their image filenames.
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the image of the product.
           content:
             image/webp:
               schema:
                 type: string
                 format: binary
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
     put:
       summary: Edit a Product
@@ -1422,9 +1336,7 @@ paths:
           example: 1700110836527.webp
           schema:
             type: string
-          description: >-
-            The product image filename to use. Use the `GET Product list`
-            endpoint to view all products and their image filenames.
+          description: The product image filename to use. Use the `GET Product list` endpoint to view all products and their image filenames.
       requestBody:
         description: |
           An form-data containing the new details.
@@ -1455,7 +1367,7 @@ paths:
                   description: The new total number of units sold.
                   example: 35
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the new information of the product.
           content:
             application/json:
@@ -1490,9 +1402,7 @@ paths:
                         description: The total number of units sold.
                       __v:
                         type: integer
-                        description: >-
-                          The version of the product. The version increases
-                          whenever the product is modified.
+                        description: The version of the product. The version increases whenever the product is modified.
                 example:
                   msg: Product updated successfully
                   updatedProduct:
@@ -1503,9 +1413,9 @@ paths:
                     description: this is a brown table
                     soldCount: 90
                     __v: 0
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
     delete:
       summary: Delete a Product
@@ -1520,13 +1430,11 @@ paths:
           example: 1701082686603.webp
           schema:
             type: string
-          description: >-
-            The product image filename to use. Use the `GET Product list`
-            endpoint to view all products and their image filenames.
+          description: The product image filename to use. Use the `GET Product list` endpoint to view all products and their image filenames.
       tags:
         - Product
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the status of the operation.
           content:
             application/json:
@@ -1538,11 +1446,11 @@ paths:
                     description: The status of the operation.
                 example:
                   msg: Item deleted
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
-  /products/details/{filename}:
+  '/products/details/{filename}':
     get:
       summary: Get Product Details
       description: This endpoint allows you get the details of a product.
@@ -1555,11 +1463,9 @@ paths:
           schema:
             type: string
             minimum: 1
-          description: >-
-            The product image filename to use. Use the `GET Product list`
-            endpoint to view all products and their image filenames.
+          description: The product image filename to use. Use the `GET Product list` endpoint to view all products and their image filenames.
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the information of the product
           content:
             application/json:
@@ -1587,9 +1493,7 @@ paths:
                     description: The total number of units sold.
                   __v:
                     type: integer
-                    description: >-
-                      The version of the product. The version increases whenever
-                      the product is modified.
+                    description: The version of the product. The version increases whenever the product is modified.
                 example:
                   _id: 6555a1f49feeac7dccd9b1ee
                   name: brown tablede
@@ -1598,9 +1502,9 @@ paths:
                   description: this is a brown table
                   soldCount: 90
                   __v: 0
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
   /products/upload:
     post:
@@ -1641,7 +1545,7 @@ paths:
                   description: The total number of units sold.
                   example: 35
       responses:
-        "200":
+        '200':
           description: Successful response. Returns the status of the operation.
           content:
             application/json:
@@ -1656,23 +1560,18 @@ paths:
   /stats/dashboard:
     get:
       summary: Get User Stats
-      description: >
-        This endpoint provides a summary of key metrics for the users shown in
-        the admin dashboard, including:
-
+      description: |
+        This endpoint provides a summary of key metrics for the users shown in the admin dashboard, including:
         - Total orders and their statuses (pending, delivery, and completed).
-
         - Total users and total products.
-
-        Each metric includes a text label, count, and a link for further
-        details.
+        Each metric includes a text label, count, and a link for further details.
       tags:
         - Statistics
       security:
         - APIKey:
             - admin
       responses:
-        "200":
+        '200':
           description: Successful response. Returns a summary of dashboard statistics.
           content:
             application/json:
@@ -1689,9 +1588,7 @@ paths:
                       description: The numeric value of the statistic.
                     link:
                       type: string
-                      description: >-
-                        A relative URL for detailed information about the
-                        statistic.
+                      description: A relative URL for detailed information about the statistic.
                   required:
                     - text
                     - count
@@ -1715,21 +1612,17 @@ paths:
                 - text: Total products
                   count: 8
                   link: products
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
-  /stats/productTable/{page}:
+  '/stats/productTable/{page}':
     get:
       summary: Get Product Stats
-      description: >
-        This endpoint retrieves product statistics for the specified page,
-        including:
-
+      description: |
+        This endpoint retrieves product statistics for the specified page, including:
         - Total products sold (`soldCount`).
-
-        - Breakdown of product orders by status (`pending`, `delivery`,
-        `completed`) with counts and total quantities.
+        - Breakdown of product orders by status (`pending`, `delivery`, `completed`) with counts and total quantities.
       tags:
         - Statistics
       security:
@@ -1744,7 +1637,7 @@ paths:
             type: integer
             minimum: 1
       responses:
-        "200":
+        '200':
           description: Successful response. Returns a paginated list of product statistics.
           content:
             application/json:
@@ -1825,11 +1718,11 @@ paths:
                     pending:
                       count: 4
                       totalQuantity: 11
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
-  /stats/orders/all/{page}:
+  '/stats/orders/all/{page}':
     get:
       summary: Get Order Stats
       description: |
@@ -1848,7 +1741,7 @@ paths:
             type: integer
             example: 1
       responses:
-        "200":
+        '200':
           description: A list of orders.
           content:
             application/json:
@@ -1922,7 +1815,7 @@ paths:
                         address:
                           type: string
                           description: Shipping address for the order.
-                          example: Tester Dr, Blackwood SA 5051, Australia
+                          example: 'Tester Dr, Blackwood SA 5051, Australia'
                         createdAt:
                           type: string
                           description: Date when the order was created.
@@ -1931,9 +1824,9 @@ paths:
                           type: integer
                           description: Version key for the order document.
                           example: 0
-        "400":
+        '400':
           description: See message description.
-        "500":
+        '500':
           description: see message description.
 components:
   securitySchemes:
