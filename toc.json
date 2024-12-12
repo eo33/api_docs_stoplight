@@ -1,0 +1,114 @@
+{
+  "collapseTableOfContents": false,
+  "items": [
+    {
+      "type": "item",
+      "title": "Introduction",
+      "uri": "/docs/Introduction.md"
+    },
+    {
+      "type": "item",
+      "title": "Get Started",
+      "uri": "/docs/get-started.md"
+    },
+    {
+      "type": "item",
+      "title": "Authentication",
+      "uri": "/docs/authentication.md"
+    },
+    {
+      "type": "item",
+      "title": "Making a request",
+      "uri": "/docs/making-a-request.md"
+    },
+    {
+      "type": "item",
+      "title": "Examples",
+      "uri": "/docs/examples.md"
+    },
+    {
+      "type": "item",
+      "title": "Functionalities",
+      "uri": "/docs/functionalities.md"
+    },
+    {
+      "type": "group",
+      "title": "Glossary",
+      "uri": "/docs/glossary/README.md",
+      "items": [
+        {
+          "type": "item",
+          "title": "API terms",
+          "uri": "/docs/glossary/api-terms.md"
+        },
+        {
+          "type": "item",
+          "title": "Functionality terms",
+          "uri": "/docs/glossary/functionality-terms.md"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Release Notes",
+      "uri": "/docs/release-notes/README.md",
+      "items": [
+        {
+          "type": "item",
+          "title": "5 Dec 2024",
+          "uri": "/docs/release-notes/5-dec-2024.md"
+        },
+        {
+          "type": "item",
+          "title": "4 Dec 2023",
+          "uri": "/docs/release-notes/4-dec-2023.md"
+        },
+        {
+          "type": "item",
+          "title": "30 Nov 2023",
+          "uri": "/docs/release-notes/30-nov-2023.md"
+        },
+        {
+          "type": "item",
+          "title": "24 Nov 2023",
+          "uri": "/docs/release-notes/24-nov-2023.md"
+        },
+        {
+          "type": "item",
+          "title": "20 Nov 2023",
+          "uri": "/docs/release-notes/20-nov-2023.md"
+        },
+        {
+          "type": "item",
+          "title": "14 Nov 2023",
+          "uri": "/docs/release-notes/14-nov-2023.md"
+        },
+        {
+          "type": "item",
+          "title": "26 Oct 2023",
+          "uri": "/docs/release-notes/26-oct-2023.md"
+        },
+        {
+          "type": "item",
+          "title": "23 oct 2023",
+          "uri": "/docs/release-notes/23-oct-2023.md"
+        },
+        {
+          "type": "item",
+          "title": "05 Oct 2023",
+          "uri": "/docs/release-notes/05-oct-2023.md"
+        }
+      ]
+    },
+
+    {
+      "type": "divider",
+      "title": "APIS"
+    },
+    {
+      "type": "item",
+      "title": "The Furniture Bros Account OpenAPI Specifications",
+      "uri": "/openapi.yaml"
+    }
+  ]
+}
